@@ -13,10 +13,10 @@ content = ""
 author = ""
 date = ""
 
-title = soup.title.string.split(" ")[0:6]
-t = ""
-for i in range(len(title)):
-    t += title[i] + " "
+t = soup.title.string.split(" ")[0:6]
+title = ""
+for i in range(len(t)):
+    title += t[i] + " "
 l = []
 for node in soup.findAll('p'):
     l.append(''.join(node.findAll(text=True)))
@@ -25,7 +25,7 @@ for i in range(7, len(l)):
     content += l[i] + "\n"
 author = l[3]
 date = l[5]
-print t
+print title
 print author
 print date
 print content

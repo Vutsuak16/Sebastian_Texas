@@ -1,0 +1,4 @@
+'''Turns out you need to enable Cookies.
+ The page redirects to itself after setting a cookie first.
+ Because urllib2 does not handle cookies by default you have to do it yourself.
+'''
