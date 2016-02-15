@@ -18,10 +18,12 @@ t = ""
 for i in range(len(title)):
     t += title[i] + " "
 
-for i in soup.findAll("a"):
-     print i.string
+for i in soup.findAll("p",{"class":"update-time"}):
+     if i.string is not None:
+         print i.string
+
 print t
-print author
+#print author
 # print date
 # print content
 # print videos
