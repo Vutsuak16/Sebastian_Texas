@@ -17,13 +17,16 @@ title = soup.title.string.split(" ")[0:6]
 t = ""
 for i in range(len(title)):
     t += title[i] + " "
+l = []
+for node in soup.findAll('p'):
+    l.append(''.join(node.findAll(text=True)))
 
-for i in soup.findAll("p",{"class":"update-time"}):
-     if i.string is not None:
-         print i.string
-
+for i in range(7, len(l)):
+    content += l[i] + "\n"
+author = l[3]
+date = l[5]
 print t
-#print author
-# print date
-# print content
+print author
+print date
+print content
 # print videos

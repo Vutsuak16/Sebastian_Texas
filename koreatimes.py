@@ -8,7 +8,7 @@ soup = bs4.BeautifulSoup(html)
 content = ""
 author = ""
 date = ""
-
+l=[]
 title = soup.title.string.split('|')[0]
 
 for i in soup.findAll('div', {'id': 'startts'}):
@@ -22,9 +22,12 @@ for i in soup.findAll('span'):
         if "Posted" in i.string.split(" "):
             date = i.string
 
+for node in soup.findAll('span'):
+        l.append(''.join(node.findAll(text=True)))
 
+author= l[4]
 print title
-#print author
+print author
 print date
-#print content
+print content
 # print videos
