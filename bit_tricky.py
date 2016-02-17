@@ -20,4 +20,7 @@ for i in soup.findAll('span', {'class': 't11'}):
     break
 
 for i in soup.findAll('div',{'id':'articleBodyContents'}):
-    print ''.join(i.findAll(text=True))
+    l.append(''.join(i.findAll(text=True)))
+
+for i in l:
+    content+=l+"\n\n"
